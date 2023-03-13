@@ -2,9 +2,9 @@ package domain.game;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import domain.bettingMoney.BettingMoneyTable;
-import domain.bettingMoney.Monies;
 import domain.deck.DefaultDeckGenerator;
+import domain.money.BettingMoneyTable;
+import domain.money.BettingMonies;
 import domain.name.Names;
 import domain.user.Player;
 import domain.user.Users;
@@ -40,11 +40,11 @@ public class BlackjackTest {
         return BettingMoneyTable.of(players, getDefaultMonies(players.size()));
     }
 
-    private Monies getDefaultMonies(int size) {
+    private BettingMonies getDefaultMonies(int size) {
         List<Integer> emptyMonies = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             emptyMonies.add(0);
         }
-        return Monies.of(emptyMonies);
+        return BettingMonies.of(emptyMonies);
     }
 }

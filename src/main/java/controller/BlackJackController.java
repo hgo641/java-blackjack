@@ -1,13 +1,13 @@
 package controller;
 
 import domain.HitCommand;
-import domain.bettingMoney.BettingMoneyTable;
-import domain.bettingMoney.Money;
-import domain.bettingMoney.Monies;
 import domain.card.Hand;
 import domain.deck.RandomDeckGenerator;
 import domain.dto.CardNames;
 import domain.game.Blackjack;
+import domain.money.BettingMoneyTable;
+import domain.money.Money;
+import domain.money.BettingMonies;
 import domain.name.Names;
 import domain.user.Player;
 import domain.user.Users;
@@ -48,7 +48,7 @@ public class BlackJackController {
             int money = InputView.askBettingMoneyToPlayer(player.getName());
             bettingMonies.add(money);
         }
-        return BettingMoneyTable.of(players, Monies.of(bettingMonies));
+        return BettingMoneyTable.of(players, BettingMonies.of(bettingMonies));
     }
 
     private void printInitMessages(final List<String> playerNames) {

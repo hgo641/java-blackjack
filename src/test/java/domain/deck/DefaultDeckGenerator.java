@@ -22,3 +22,4 @@ public class DefaultDeckGenerator implements DeckGenerator {
         return new Deck(cards);
     }
 }
+
