@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Blackjack {
     private final Users users;
@@ -101,8 +100,8 @@ public class Blackjack {
 
     public Map<String, Money> calculateWinningMoneyOfPlayers() {
         Map<String, Money> winningMoneyOfPlayers = new HashMap<>();
-        Dealer dealer = users.getDealer();
-        for (Player player : users.getPlayers()) {
+        Dealer dealer =  users.getDealer();
+        for(Player player : users.getPlayers()){
             Money winningMoney = exchanger.getPlayerWinningMoney(player, dealer);
             winningMoneyOfPlayers.put(player.getName(), winningMoney);
         }
@@ -110,7 +109,6 @@ public class Blackjack {
     }
 
     public Money calculateWinningMoneyOfDealer(Map<String, Money> winningMoneyOfPlayers) {
-        List<Money> playerMonies = winningMoneyOfPlayers.values().stream().collect(Collectors.toList());
-        return exchanger.getDealerWinningMoney(playerMonies);
+        return exchanger.getDealerWinningMoney((List<Money>) winningMoneyOfPlayers.values());
     }
 }

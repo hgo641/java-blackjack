@@ -5,9 +5,13 @@ import domain.card.Hand;
 import domain.deck.RandomDeckGenerator;
 import domain.dto.CardNames;
 import domain.game.Blackjack;
+<<<<<<< HEAD
 import domain.money.BettingMoneyTable;
 import domain.money.Money;
 import domain.money.BettingMonies;
+=======
+import domain.game.Result;
+>>>>>>> parent of d35bebf (feat: 참여자 수익 출력 기능 구현)
 import domain.name.Names;
 import domain.user.Player;
 import domain.user.Users;
@@ -97,6 +101,6 @@ public class BlackJackController {
         OutputView.printPlayerCardWithScore(blackJack.getPlayerToCardNames(), blackJack.getPlayerToScore());
         Map<String, Money> winningMoneyOfPlayers = blackJack.calculateWinningMoneyOfPlayers();
         Money winningMoneyOfDealer = blackJack.calculateWinningMoneyOfDealer(winningMoneyOfPlayers);
-        OutputView.printWinningMoneyOfPlayers(winningMoneyOfDealer, winningMoneyOfPlayers);
+        //OutputView.printWinningMoneyOfPlayers(winningMoneyOfDealer, winningMoneyOfPlayers);
     }
 }
